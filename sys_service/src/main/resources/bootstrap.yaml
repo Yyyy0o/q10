@@ -1,0 +1,26 @@
+server:
+  port: 1001
+spring:
+  application:
+    name: sys-service
+  cloud:
+    zookeeper:
+      discovery:
+        enabled: true
+        register: true
+      connect-string: 192.168.1.3:2181
+#    config:
+#      name: sys
+#      profile: dev
+#      discovery:
+#        enabled: true
+#        service-id: config-service
+apollo:
+  bootstrap:
+    enable: true
+    namespace: application
+    eagerLoad:
+      enable: true
+  meta: http://192.168.1.3:8080
+app:
+  id: SampleApp
